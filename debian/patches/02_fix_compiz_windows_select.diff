@@ -1,0 +1,85 @@
+Description: Fixes no windows hiding when using compiz (Closes: #579503)
+Author: "Michael B. Trausch" <mike@trausch.us>
+Origin: https://launchpad.net/bugs/106583
+--- a/src/clickmode.c
++++ b/src/clickmode.c
+@@ -141,7 +141,7 @@
+ 
+              target_win != None &&
+              target_win != GDK_ROOT_WINDOW() &&
+-             target_win != target_win_xmu &&
++             (target_win != target_win_xmu  || win->compiz == TRUE) &&
+              window_type_is_normal (target_win_xmu))) {
+ 
+               gdk_pointer_ungrab  (GDK_CURRENT_TIME); 
+--- a/src/common.h
++++ b/src/common.h
+@@ -186,6 +186,7 @@
+ 
+   gchar *window_manager;
+   gboolean gnome;
++  gboolean compiz;
+   gboolean kde;
+ 
+   gboolean no_reparent;
+--- a/src/main.c
++++ b/src/main.c
+@@ -123,6 +123,7 @@
+ 
+   win->window_manager=NULL;
+   win->gnome=FALSE;
++  win->compiz=FALSE;
+   win->kde=FALSE;
+ 
+   win->no_reparent=FALSE;
+@@ -169,7 +170,7 @@
+ 
+   if (debug) printf ("window manager: %s\n", win->window_manager);
+ 
+-  if (!strcmp(win->window_manager, "Metacity")) {
++  if ((!strcmp(win->window_manager, "Metacity"))) {
+ 
+     #ifndef GCONF_NOT_DISABLED
+           printf ("\n\nAlltray: To use Alltray under Gnome, Gconf support should not be disabled.\n"
+@@ -181,6 +182,16 @@
+     win->no_reparent=TRUE;
+   }
+ 
++  if (!strcmp(win->window_manager, "compiz")) {
++    #ifndef GCONF_NOT_DISABLED
++          printf ("\n\nAlltray: To use Alltray with Compiz, Gconf support should not be disabled.\n"
++                  "         But it is.\n\n");
++          exit (0);
++    #endif 
++
++     win->compiz = TRUE;
++  }
++
+   if (!strcmp(win->window_manager, "KWin")) {
+      win->kde=TRUE;
+      win->no_reparent=TRUE;
+@@ -237,6 +248,7 @@
+ 
+     win->gnome=FALSE;
+     win->kde=FALSE;
++    win->compiz=FALSE;
+     win->no_reparent=TRUE;
+   }
+ 
+@@ -363,10 +375,14 @@
+   if (!win->click_mode && !win->notray)
+     wait_for_manager(win);
+ 
+-  if (!win->click_mode)
++  if (!win->click_mode) {
+     exec_and_wait_for_window(win);
+-  else
++  } else {
++    if(win->compiz) {
++      win->no_reparent = TRUE;
++    }
+     click_mode(win);
++  }
+ 
+   if (win->xmms) {
+     win->xmms_main_window_gdk=gdk_window_foreign_new(win->xmms_main_window_xlib);

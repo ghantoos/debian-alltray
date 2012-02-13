@@ -1,0 +1,15 @@
+Description: Corrects typo errors in source files
+Forwarded: Yes. This patch has also been integrated upstream.
+Author: Ignace Mouzannar <mouzannar@gmail.com>
+Last-Update: 2010-02-13
+--- a/alltray.1
++++ b/alltray.1
+@@ -78,7 +78,7 @@
+ Add entry "menu text:command" to popdown menu\&.
+ .TP
+ \fB\-t\fR \fB\-\-title\fR
+-Show title change for <sec> seconds. Probably most usefull for xmms\&.
++Show title change for <sec> seconds. Probably most useful for xmms\&.
+ .TP
+ \fB\-g\fR \fB\-\-geometry\fR
+ initial position. see man X.
