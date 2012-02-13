@@ -1,38 +1,32 @@
-alltray (0.70-2) unstable; urgency=low
+alltray (0.71a-1) unstable; urgency=low
 
+  * New upstream version:
+    - Fixes Alltray trayicons use their owntooltip theme bug. (Closes: #524683)
+    - Fixes FTBFS when building against binutils-gold. (Closes: #553650)
   * New maintainer. (Closes: #566880)
   * debian/control:
     - Bumped Standards-Version to 3.8.4.
     - Updated Maintainer field.
     - Added the Vcs-Browser address.
     - Added Build-Depends on bash-completion.
-  * debian/patches:
-    - 01_dont-use-pop-up-bubble.diff: fixes Alltray trayicons use their own
-      tooltip theme bug. Thank you Kyran Lange <Dr.klange@gmail.com> for
-      providing this patch. (Closes: #524683)
-    - 02_link_to_x11.diff: fixes FTBFS when building against binutils-gold.
-      (Closes: #553650)
-    - 03_desktop_entry_encoding.diff: removes Encoding key from the desktop
-       entry as it is not necessary anymore.
-    - 04_typo_errors.diff: corrects typo errors in source files.
-    - 05_manpage.diff: updates the homepage, removes deprecated option
-     (-na|--no-alltray), adds new options: --key, --notray, -- nominimize and
-     --borderless, and corrects the alltray version number inside the manpage.
-  * debian/menu:
-    - Added menu file. (Closes: #449598)
-  * debian/changelog:
-    - Updated changelog format, as it contained boilerplate from older
-      versions of dh_make.
-  * debian/symbols:
-    - Added symbols file.
-  * debian/bash-completion:
-    - New file; this file adds the possibility for bash to complete the alltray
-      command with the list of all available applications.
   * debian/rule:
-    - Added override of dh_auto_install to include installation of
-      bash-completion using dh_bash-completion.
+    - Added "--with bash_completion" to include installation of the
+      bash-completion file.
+  * debian/copyright:
+    - Updated copyright format, as it contained boilerplate from older
+      versions of dh_make.
+    - Mentioned the copyright of the debian/ folder
+  * debian/patches:
+    - 01_minor_type.diff: corrects typo errors in source files.
+  * debian/alltray.menu:
+    - Added menu file. (Closes: #449598)
+  * debian/alltray.symbols:
+    - Added symbols file.
+  * debian/alltray.bash-completion:
+    - This file adds the possibility for bash to complete the alltray command
+      with the list of all available applications.
 
- -- Ignace Mouzannar <mouzannar@gmail.com>  Tue, 02 Feb 2010 22:15:42 +0000
+ -- Ignace Mouzannar <mouzannar@gmail.com>  Sun, 07 Mar 2010 11:15:16 +0000
 
 alltray (0.70-1) unstable; urgency=low
 

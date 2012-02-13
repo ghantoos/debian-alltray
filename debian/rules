@@ -1,8 +1,7 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@
-
+	dh $@ --with bash_completion
 
 override_dh_auto_configure:
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
@@ -12,7 +11,3 @@ ifneq "$(wildcard /usr/share/misc/config.guess)" ""
 	cp -f /usr/share/misc/config.guess config.guess
 endif
 	dh_auto_configure
-
-override_dh_auto_install:
-	dh_auto_install
-	dh_bash-completion
