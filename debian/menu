@@ -1,0 +1,2 @@
+?package(alltray):needs="X11" section="Applications/Graphics"\
+  title="AllTray" command="/usr/bin/alltray"

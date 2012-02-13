@@ -1,0 +1,27 @@
+Alltray running examples
+========================
+Please check the options for alltray(1)
+  $ man alltray
+  $ alltray --help
+To run alltray for xmms with a different icon:
+  $ alltray -i /usr/share/icons/gartoon/scalable/apps/xmms.svg -s -x xmms
+To run thunderbird:
+  $ alltray -i /usr/share/icons/gartoon/scalable/apps/thunderbird.svg \
+    mozilla-thunderbird
+Obviously I'm using the gartoon theme ;)
+
+Override of lintian and linda
+=============================
+The alltray developer at version 0.50 has made a library for alltray named
+liballtraynomap and I will make a different package for this library on a
+future release.
+
+This change makes me introduce a override file for lintian and linda.
+lintian: non-dev-pkg-with-shlib-symlink
+linda: shlibs-sover-mismatch
+
+From lintian information:
+  However, if this is a small package which includes the runtime and the
+  development libraries, this is not a bug. In the latter case, please
+  override this warning.
+

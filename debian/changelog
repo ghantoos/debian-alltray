@@ -1,0 +1,66 @@
+alltray (0.70-2) unstable; urgency=low
+
+  * New maintainer. (Closes: #566880)
+  * debian/control:
+    - Bumped Standards-Version to 3.8.4.
+    - Updated Maintainer field.
+    - Added the Vcs-Browser address.
+    - Added Build-Depends on bash-completion.
+  * debian/patches:
+    - 01_dont-use-pop-up-bubble.diff: fixes Alltray trayicons use their own
+      tooltip theme bug. Thank you Kyran Lange <Dr.klange@gmail.com> for
+      providing this patch. (Closes: #524683)
+    - 02_link_to_x11.diff: fixes FTBFS when building against binutils-gold.
+      (Closes: #553650)
+    - 03_desktop_entry_encoding.diff: removes Encoding key from the desktop
+       entry as it is not necessary anymore.
+    - 04_typo_errors.diff: corrects typo errors in source files.
+    - 05_manpage.diff: updates the homepage, removes deprecated option
+     (-na|--no-alltray), adds new options: --key, --notray, -- nominimize and
+     --borderless, and corrects the alltray version number inside the manpage.
+  * debian/menu:
+    - Added menu file. (Closes: #449598)
+  * debian/changelog:
+    - Updated changelog format, as it contained boilerplate from older
+      versions of dh_make.
+  * debian/symbols:
+    - Added symbols file.
+  * debian/bash-completion:
+    - New file; this file adds the possibility for bash to complete the alltray
+      command with the list of all available applications.
+  * debian/rule:
+    - Added override of dh_auto_install to include installation of
+      bash-completion using dh_bash-completion.
+
+ -- Ignace Mouzannar <mouzannar@gmail.com>  Tue, 02 Feb 2010 22:15:42 +0000
+
+alltray (0.70-1) unstable; urgency=low
+
+  * QA upload.
+  * Orphan the package as Carlos C Soto has no time to maintain it properly.
+  * New upstream release.
+  * Switch to 3.0 (quilt).
+  * Move Homepage into its own control field.
+  * Rename XS-Vcs-Svn in Vcs-Svn.
+  * Drop linda overrides.
+  * Switch to dh 7 tiny rules file and compat mode 7.
+  * Add ${misc:Depends} to Depends.
+  * Add watch file.
+  * Update to Standards-Version 3.8.3.
+  * None of the Ubuntu patches apply on this version, I did not look further
+    to try to integrate them.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Mon, 25 Jan 2010 21:08:33 +0100
+
+alltray (0.69-1) unstable; urgency=low
+
+  [ Carlos C Soto ]
+  * New upstream release (Closes: Bug#305000).
+
+  [ Raphael Hertzog ]
+  * Sponsoring this package.
+  * Added XS-Vcs-Svn header in debian/control.
+  * Added myself in the Uploaders field.
+
+ -- Raphael Hertzog <hertzog@debian.org>  Sun, 14 Jan 2007 18:36:56 +0100
+

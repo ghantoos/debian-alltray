@@ -1,0 +1,10 @@
+liballtray.so.0 alltray #MINVER#
+ XMapRaised@Base 0.69
+ XMapSubwindows@Base 0.69
+ XMapWindow@Base 0.69
+ error_handler@Base 0.69
+ iconic@Base 0.69
+ initialize@Base 0.69
+ sent_found_window_to_parent@Base 0.69
+ window_is_visible@Base 0.69
+ xprop@Base 0.69

@@ -1,0 +1,97 @@
+Description:
+  - Corrects typo errors in source files.
+Author: Ignace Mouzannar <mouzannar@gmail.com>
+Last-Update: 2010-02-03
+--- a/ChangeLog
++++ b/ChangeLog
+@@ -10,7 +10,7 @@
+ 
+ Jul 6, 2006: Jochen Baier <email@jochen-baier.de>
+ - added "Stop" to the xmms menu. requested by me ;)
+-- get the gnome theme file by reading "XDG_DATA_DIRS". usefull if gnome is not installed in "/usr..."
++- get the gnome theme file by reading "XDG_DATA_DIRS". useful if gnome is not installed in "/usr..."
+   bug reported by Laurent Hilsz
+ - fixed shortcut bug. report and patch from Travis Hartwell
+ - fixed segfault which occur if apps where closed with "FILE->QUIT"
+@@ -19,9 +19,9 @@
+ 
+ Jun 23, 2006:
+ - support for keyboard-shortcut. Toggle apps with a key stroke.
+-- added "--notray" option: display no tray icon. usefull with a keyboard-shortcut.
++- added "--notray" option: display no tray icon. useful with a keyboard-shortcut.
+ - added "--nominimize" option: click on window close button: do not minimize back to tray, close
+-- "--disable-gconf" configure option. usefull for KDE only Desktops. requested by Niertour(?)
++- "--disable-gconf" configure option. useful for KDE only Desktops. requested by Niertour(?)
+ - man page update (0.66) by Carlos C Soto
+ - set version to 0.68
+ 
+@@ -154,7 +154,7 @@
+ - alltray works now with Fluxbox and WindowMaker
+   (wmaker with "docker" dockapp)
+ - added "--borderless" option, requested by Jesus Garcia Crespo,
+-  usefull for borderless Eterm, xmms...
++  useful for borderless Eterm, xmms...
+ - prevent child moving inside parent
+ - resize tray icon if system tray/panel change size
+ - added "--large_icons" option to allow icons greater than 24x24
+@@ -167,14 +167,14 @@
+ - set version to 0.40
+ 
+ Jan, 27, 2005: Jochen Baier <Jochen.Baier@stud.uni-karlsruhe.de>
+-- use process group ID to identify windows (usefull for programs
++- use process group ID to identify windows (useful for programs
+   with own child processes like thunderbird,
+   alltray /home/user/thunderbird/thunderbird works now)
+   thanks to Kai for the bug report
+ - remove path and arguments from command before compare with
+   wm_class
+ - check if the size of the child window have changed before docking
+-  (usefull for "ding, Dictionary Lookup" program)
++  (useful for "ding, Dictionary Lookup" program)
+   thanks to Poly for the bug report
+ - added "--debug" command line option
+ - check for unknown/wrong options
+--- a/README
++++ b/README
+@@ -80,7 +80,7 @@
+      Modifier="Shift", "Control", "Alt", "AltGr"
+      Key (Examples) = "a", "F1", "End" ...
+      or "Keycode" (Number) returned by the program "xev"
+-   --notray; -nt: display no tray icon (usefull only with the "--key" option or what ever
++   --notray; -nt: display no tray icon (useful only with the "--key" option or what ever
+    --nominimize; -nm: click on window close button: do not minimize back to system tray, close
+    --configure; -conf: show KDE configuration dialog
+ 
+--- a/alltray.1
++++ b/alltray.1
+@@ -78,7 +78,7 @@
+ Add entry "menu text:command" to popdown menu\&.
+ .TP
+ \fB\-t\fR \fB\-\-title\fR
+-Show title change for <sec> seconds. Probably most usefull for xmms\&.
++Show title change for <sec> seconds. Probably most useful for xmms\&.
+ .TP
+ \fB\-g\fR \fB\-\-geometry\fR
+ initial position. see man X.
+--- a/src/main.c
++++ b/src/main.c
+@@ -226,7 +226,7 @@
+   }
+ 
+   if (configure && !win->kde) {
+-    printf ("\n\nAlltray: \"--configure\" option only usefull for the KDE desktop.\n\n");
++    printf ("\n\nAlltray: \"--configure\" option only useful for the KDE desktop.\n\n");
+     exit (0);
+   }
+ 
+--- a/src/parent.c
++++ b/src/parent.c
+@@ -508,7 +508,7 @@
+              "     Modifier=\"Shift\", \"Control\", \"Alt\", \"AltGr\"\n"\
+              "     Key (Examples) = \"a\", \"F1\", \"End\" ...\n"\
+              "     or \"Keycode\" (Number) returned by the program \"xev\"\n"\
+-             "   --notray; -nt: display no tray icon (usefull only with the \"--key\" option)\n"\
++             "   --notray; -nt: display no tray icon (useful only with the \"--key\" option)\n"\
+              "   --nominimize; -nm: click on window close button: do not minimize back to system tray, close\n"\
+             "   --configure; -conf: show KDE configuration dialog\n\n"\
+              "usage: alltray\n\n"\

@@ -1,0 +1,53 @@
+Description:
+  - Fixes Alltray trayicons use their own tooltip theme bug (#524683)
+Author: Kyran Lange <kyran.lange@gmail.com>
+Last-Update: 2010-02-02
+
+--- a/src/trayicon.c
++++ b/src/trayicon.c
+@@ -385,22 +385,6 @@
+     
+ }
+ 
+-gboolean icon_window_enter_event(GtkWidget *widget, GdkEventButton * event,
+-    gpointer user_data)
+-{
+-  
+-  win_struct *win= (win_struct*) user_data;
+-  
+-  if (debug) printf ("icon window enter event\n");
+-    
+-  win->balloon_message_allowed=TRUE;
+-
+-  show_balloon (win, win->title, 0);
+-  
+-  return FALSE;
+-
+-}
+-
+ void create_tray_and_dock (win_struct *win)
+ {
+   
+@@ -480,12 +464,6 @@
+                     G_CALLBACK (icon_window_configure_event),
+                     (gpointer) win);
+   
+-  
+-  g_signal_connect ((gpointer) win->plug, "enter_notify_event",
+-                    G_CALLBACK (icon_window_enter_event),
+-                    (gpointer) win);
+-
+-
+   dock_window (win->manager_window, win->plug_xlib);
+ 
+ }
+--- a/src/utils.c
++++ b/src/utils.c
+@@ -1493,6 +1493,7 @@
+ 
+ 
+     if (debug) printf ("win->title: %s\n", win->title);
++    gtk_widget_set_tooltip_text(win->plug, win->title);
+     g_free(title);
+ 
+     if (win->title_time) {

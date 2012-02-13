@@ -1,0 +1,27 @@
+Description:
+  - Fixes FTBFS when building against binutils-gold (#553650)
+Author: Ignace Mouzannar <mouzannar@gmail.com>
+Last-Update: 2010-02-03
+
+--- a/lib/Makefile.in
++++ b/lib/Makefile.in
+@@ -187,7 +187,7 @@
+ top_srcdir = @top_srcdir@
+ lib_LTLIBRARIES = liballtray.la
+ liballtray_la_SOURCES = nomap.c
+-liballtray_la_LDFLAGS = -version-info 0:0:0 -ldl
++liballtray_la_LDFLAGS = -version-info 0:0:0 -ldl -lX11
+ liballtray_la_CFLAGS = $(X_CFLAGS)
+ all: all-am
+ 
+--- a/src/Makefile.in
++++ b/src/Makefile.in
+@@ -224,7 +224,7 @@
+   eventfilter.h \
+   inlinepixbufs.h
+ 
+-alltray_LDFLAGS = -L/usr/X11R6/lib
++alltray_LDFLAGS = -L/usr/X11R6/lib -lX11
+ alltray_LDADD = @PACKAGE_LIBS@
+ all: all-am
+ 

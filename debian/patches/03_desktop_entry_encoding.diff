@@ -1,0 +1,12 @@
+Description:
+  - Removes Encoding key from the desktop entry.
+Author: Ignace Mouzannar <mouzannar@gmail.com>
+Last-Update: 2010-02-03
+--- a/alltray.desktop
++++ b/alltray.desktop
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=AllTray
+ GenericName=AllTray
+ Comment=Dock everything

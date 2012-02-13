@@ -1,0 +1,70 @@
+This package was debianized by Carlos C Soto <csoto@sia-solutions.com> on
+Mon, 14 Aug 2006 02:11:07 -0500.
+
+It was downloaded from: http://alltray.sourceforge.net/
+
+Upstream Authors:
+
+    Jochen Baier <email@jochen-baier.de>
+    Michael B. Trausch <mike@trausch.us>
+
+Files: *
+Copyright: 
+    2004-2006, Jochen Baier <email@jochen-baier.de>
+Licence: GPL
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-2'.
+
+File: src/clientwin.c
+Copyright:
+    1989-1998, The Open Group
+Licence:
+
+   Permission to use, copy, modify, distribute, and sell this software and its
+   documentation for any purpose is hereby granted without fee, provided that
+   the above copyright notice appear in all copies and that both that
+   copyright notice and this permission notice appear in supporting
+   documentation.
+
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+   OPEN GROUP BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+   AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+   Except as contained in this notice, the name of The Open Group shall not be
+   used in advertising or otherwise to promote the sale, use or other dealings
+   in this Software without prior written authorization from The Open Group.
+
+File: src/binreloc.c
+Copyright:
+    Hongli Lai <h.lai@chello.nl>
+Licence:
+   This source code is public domain. You can relicense this code
+   under whatever license you want.
+
+Files: debian/*
+Copyright:
+    2006, Carlos C Soto <csoto@sia-solutions.com>
+    2007-2010, Raphael Hertzog <hertzog@debian.org>
+    2010, Ignace Mouzannar <mouzannar@gmail.com>
+Licence: GPL
