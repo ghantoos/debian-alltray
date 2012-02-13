@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 7.0.50~), autotools-dev, libgtk2.0-dev, libgconf2-d
 Vcs-Svn: svn://svn.debian.org/collab-maint/ext-maint/alltray/trunk/
 Vcs-Browser: http://svn.debian.org/viewsvn/collab-maint/ext-maint/alltray/trunk/
 Homepage: http://alltray.trausch.us/
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 
 Package: alltray
 Architecture: any

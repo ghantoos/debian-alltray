@@ -1,13 +1,13 @@
-alltray (0.71a-2) unstable; urgency=low
+alltray (0.71b-1) unstable; urgency=low
 
+  * New upstream release. (Closes: #602233)
+    - Fixes no windows hiding when using compiz. (Closes: #579503)
+  * debian/control:
+    - Bumped Standards-Version to 3.9.1.
   * debian/patches:
-    - Renamed 01_minor_type.diff to 01_minor_typo.diff
-    - 01_minor_typo.diff: corrected Description field and added mention that
-      this patch has been forwarded and integrate upstream.
-    - 02_fix_compiz_windows_select.diff: Fixes no windows hiding when using
-      compiz (Closes: #579503).
+    - Removed 01_minor_type.diff as it has been integrated upstream.
 
- -- Ignace Mouzannar <mouzannar@gmail.com>  Mon, 03 May 2010 23:42:27 +0200
+ -- Ignace Mouzannar <mouzannar@gmail.com>  Sat, 20 Nov 2010 16:16:12 +0100
 
 alltray (0.71a-1) unstable; urgency=low
 
